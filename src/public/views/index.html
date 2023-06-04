@@ -35,8 +35,8 @@
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="./cart.html">
-              <i class="fas fa-shopping-cart"></i>
+            <a class="nav-link" href="./cart.html" data-toggle="modal" data-target="#cartModal">
+              <i class="fas fa-shopping-cart"></i> Carrito
             </a>
           </li>
 
@@ -50,21 +50,43 @@
       </div>
     </nav>
   </header>
+  <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Aquí puedes agregar el contenido del carrito de compras -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Realizar Pedido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <main>
     <section class="jumbotron text-center bg-gradient">
       <div class="container">
         <h1 class="jumbotron-heading">Bienvenido a Heaven Wine</h1>
         <p class="lead">
-          Descubre nuestra selección de vinos y licores de calidad. En Mi Bodega, nos enorgullece ofrecerte productos cuidadosamente seleccionados de las mejores bodegas. Disfruta de una experiencia única y déjate cautivar por nuestros sabores exquisitos.
+          Descubre nuestra selección de vinos y licores de calidad. En Mi Bodega, nos enorgullece ofrecerte productos
+          cuidadosamente seleccionados de las mejores bodegas. Disfruta de una experiencia única y déjate cautivar por
+          nuestros sabores exquisitos.
         </p>
         <a href="./products.html" class="btn btn-vino btn-primary">Explorar</a>
       </div>
     </section>
-    
-    
-    
-    
+
+
+
+
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -116,7 +138,7 @@
   </main>
 
   <footer class="bg-vino text-center text-white py-3">
-    <p>&copy; 2023 Mi Bodega. Todos los derechos reservados.</p>
+    <p>&copy; 2023 Heaven Wine. Todos los derechos reservados.</p>
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
