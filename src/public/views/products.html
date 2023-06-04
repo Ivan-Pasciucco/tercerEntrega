@@ -4,14 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Heaven Wine</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Ecommerce Bodega</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <link rel="stylesheet" href="./../css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -24,142 +20,66 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <!-- Otras list items -->
+          <li class="nav-item active">
+            <a class="nav-link" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./products.html">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html">Quiénes somos</a>
+          </li>
         </ul>
-        <ul class="navbar-nav ml-auto"> <!-- Mueve la clase ml-auto aquí -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./cart.html" data-toggle="modal" data-target="#cartModal">
+              <i class="fas fa-shopping-cart"></i> Carrito
+            </a>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="./login.html"><i class="fas fa-user"></i> Iniciar sesión</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./register.html"><i class="fas fa-user-plus"></i> Registrarse</a>
           </li>
-          <li class="nav-item" id="logoutContainer"></li>
         </ul>
       </div>
     </nav>
   </header>
-  
-  
-  <main class="container mt-5">
-    <h2 class="text-center">Productos</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card mb-4">
-          <div class="image-container">
-            <img src="./../img/1.webp" class="card-img-top" alt="Producto 1">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Vino Otro Loco Mas </h5>
-            <p class="card-text">Vino Otro Loco Mas Malbec 750ml
-              .</p>
-            <button class="btn btn-primary btn-vino addToCartBtn" data-product="1">Agregar al carrito</button>
-          </div>
+  <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4">
-          <div class="image-container">
-            <img src="./../img/2.webp" class="card-img-top" alt="Producto 2">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Vino Angelica Zapata Malbec Alta</h5>
-            <p class="card-text">Variedad	Tinto
-              Varietal	Malbec</p>
-            <button class="btn btn-primary  btn-vino addToCartBtn" data-product="2">Agregar al carrito</button>
-          </div>
+        <div class="modal-body">
+          <div id="cartItemsContainer"></div> <!-- Contenedor para los elementos del carrito -->
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4">
-          <div class="image-container">
-            <img src="./../img/3.webp" class="card-img-top" alt="Producto 3">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Vino Marchiori Y Barraud Hornero Blend</h5>
-            <p class="card-text">74% Malbec-13% Cabernet Sauvignon-13% Cabernet</p>
-            <button class="btn btn-primary  btn-vino addToCartBtn" data-product="3">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4">
-          <div class="image-container">
-            <img src="./../img/4.webp" class="card-img-top" alt="Producto 4">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Producto 4</h5>
-            <p class="card-text">Descripción del producto 4.</p>
-            <button class="btn btn-primary  btn-vino addToCartBtn" data-product="4">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4">
-          <div class="image-container">
-            <img src="./../img/5.webp" class="card-img-top" alt="Producto 5">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Producto 5</h5>
-            <p class="card-text">Descripción del producto 5.</p>
-            <button class="btn btn-primary  btn-vino addToCartBtn" data-product="5">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4">
-          <div class="image-container">
-            <img src="./../img/6.webp" class="card-img-top" alt="Producto 6">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Producto 6</h5>
-            <p class="card-text">Descripción del producto 6.</p>
-            <button class="btn btn-primary  btn-vino addToCartBtn" data-product="6">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4">
-          <div class="image-container">
-            <img src="./../img/6.webp" class="card-img-top" alt="Producto 7">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Producto 7</h5>
-            <p class="card-text">Descripción del producto 7.</p>
-            <button class="btn btn-primary  btn-vino addToCartBtn" data-product="7">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4">
-          <div class="image-container">
-            <img src="./../img/6.webp" class="card-img-top" alt="Producto 8">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Producto 8</h5>
-            <p class="card-text">Descripción del producto 8.</p>
-            <button class="btn btn-primary  btn-vino addToCartBtn" data-product="8">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4">
-          <div class="image-container">
-            <img src="./../img/6.webp" class="card-img-top" alt="Producto 8">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Producto 9</h5>
-            <p class="card-text">Descripción del producto 9.</p>
-            <button class="btn btn-primary  btn-vino addToCartBtn" data-product="9">Agregar al carrito</button>
-          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="checkoutButton">Realizar Pedido</button>
         </div>
       </div>
     </div>
+  </div>
+  <main class="container mt-5">
+    <h2 class="text-center">Productos</h2>
+    <div id="productContainer" class="row"></div>
   </main>
   <footer class="bg-vino text-white text-center py-3">
     <p>&copy; 2023 Ecommerce Bodega. Todos los derechos reservados.</p>
   </footer>
+  <script src="./../../js/productList.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="./../js/script.js"></script>
 </body>
